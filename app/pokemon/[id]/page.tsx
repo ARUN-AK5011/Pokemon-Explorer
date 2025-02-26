@@ -1,7 +1,13 @@
 import { fetchPokemonById } from "@/api/PokeAPI";
 
+
+export async function generateStaticParams() {
+    const ids = Array.from({ length: 400 }, (_, i) => (i + 1).toString());  
+    return ids.map((id) => ({ id }));
+}
+
 export default async function PokemonDetail({ params }: { params: Promise<{ id: string }> }) {
-  const resolvedParams = await params; // Await params before accessing `id`
+  const resolvedParams = await params; 
 
   if (!resolvedParams?.id) {
     return <p className="text-center text-red-500">Invalid Pokémon ID</p>;
