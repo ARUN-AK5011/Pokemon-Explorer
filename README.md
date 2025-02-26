@@ -14,4 +14,4 @@ npm install
 npm run dev
 
 ### ** Live Demo **  
-https://netlify.app
+https://pokemon-explorer-arun.netlify.app/
